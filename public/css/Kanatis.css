@@ -1,0 +1,365 @@
+.fs50:before {
+  font-size: 50px; }
+
+.fs60:before {
+  font-size: 60px; }
+
+html * {
+  letter-spacing: 1px; }
+
+body {
+  font-family: Meiryo;
+  background-color: #3a3a3a; }
+
+header {
+  position: fixed;
+  width: 100%;
+  background-color: rgba(25, 25, 25, 0.8);
+  height: 70px;
+  color: #ecf0f1;
+  padding: 5px;
+  margin: 0px;
+  z-index: 50; }
+  header div {
+    color: antiquewhite;
+    padding-left: 20px;
+    font-size: 36px;
+    margin: 0px;
+    line-height: 15px;
+    font-family: Cursive;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex; }
+    header div p {
+      padding-left: 20px; }
+
+footer {
+  width: 100%;
+  background-color: #2c3e50;
+  height: 50px;
+  width: 100%;
+  position: relative;
+  height: auto !important;
+  line-height: 100%; }
+
+#menu {
+  margin-left: -160px;
+  padding-top: 30px;
+  position: fixed;
+  top: 80;
+  left: 160;
+  width: 320px;
+  bottom: 0;
+  overflow-y: auto;
+  background-color: #2a2a2a; }
+
+#orderSwitch p {
+  margin: 10px 0px 0px 0px;
+  padding: 3px 3px 3px 3px;
+  width: 70px; }
+
+#taskSection {
+  padding: 100px 0px 0px 320px; }
+
+#formSection {
+  padding: 5px 5px 5px 5px;
+  height: 300px; }
+  #formSection .menuBtn {
+    letter-spacing: 2.5px; }
+
+#formSection > div {
+  width: 300px;
+  color: white;
+  margin: 5px; }
+
+#formSection form {
+  background-color: floralwhite;
+  height: 100%;
+  padding: 0px 0px 0px 120px; }
+
+#condForm .formTitle {
+  background-color: #F25C55; }
+
+#sortForm .formTitle {
+  background-color: #3bbcad; }
+
+#taskCountBox {
+  font-weight: bold;
+  text-align: center;
+  color: floralwhite; }
+
+.task {
+  color: #ecf0f1;
+  margin: 5px 10px 5px 15px;
+  min-width: 350px;
+  max-width: 450px;
+  float: left; }
+
+.taskTable {
+  color: white; }
+  .taskTable tr:nth-child(5) {
+    height: 55px; }
+
+.taskTable td {
+  padding: 5px 5px 5px 5px; }
+
+.taskHead p {
+  padding-top: 3px; }
+
+#taskCountBox div {
+  width: 30%;
+  float: left; }
+
+#showCommentBtn {
+  width: 120px;
+  height: 120px;
+  background-color: floralwhite;
+  margin: 15px; }
+
+#hideCommentBtn {
+  width: 120px;
+  height: 120px;
+  background-color: floralwhite;
+  margin: 15px; }
+
+#downloadBtn {
+  width: 120px;
+  height: 120px;
+  background-color: floralwhite;
+  margin: 15px; }
+
+#resetTodayTimeBtn {
+  width: 120px;
+  height: 120px;
+  background-color: floralwhite;
+  margin: 15px; }
+
+#howToBtn {
+  width: 120px;
+  height: 120px;
+  background-color: floralwhite;
+  margin: 15px; }
+
+#sortForm fieldset {
+  padding-top: 25px; }
+
+#newTaskForm fieldset {
+  padding-top: 15px; }
+
+#condForm fieldset {
+  padding-top: 25px; }
+
+#addTaskBtn {
+  font-size: 12px;
+  border: none;
+  color: #d95151;
+  background-color: #FBCBCB; }
+
+.inputFieldSet div {
+  padding-top: 7px; }
+
+#ascBtn:hover {
+  opacity: 0.7; }
+
+.blur {
+  -webkit-filter: blur(5px); }
+
+.wall {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1; }
+
+.taskHead {
+  position: relative;
+  margin: 0px;
+  padding: 5px 10px 5px 15px;
+  -webkit-transition-property: all;
+          transition-property: all;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out; }
+  .taskHead .taskTodayTime {
+    -webkit-transition-property: all;
+            transition-property: all;
+    -webkit-transition-duration: 0.2s;
+            transition-duration: 0.2s;
+    -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out; }
+
+.taskHead p {
+  margin: 0px; }
+
+.taskBody {
+  margin: 0px;
+  padding: 5px 10px 5px 15px; }
+
+.commentForm {
+  padding: 10px 10px 5px 15px; }
+
+.commentBody {
+  margin: 0px;
+  padding: 0px 0px 0px 0px; }
+
+.date {
+  text-align: right;
+  font-size: 8px;
+  margin: 0px; }
+
+.commentDeleteBtn {
+  text-align: right;
+  margin: 0px;
+  padding: 5px 10px 0px 0px; }
+
+.taskDeleteBtn {
+  text-align: right;
+  margin: 0px; }
+
+.toggleComment {
+  text-align: right;
+  margin: 0px; }
+
+.formTitle {
+  height: 100%;
+  width: 110px;
+  background-color: #F25C55; }
+
+.formTitle:hover {
+  opacity: 0.9; }
+
+.formTitle > p {
+  padding: 90px 0px 10px 0px;
+  margin: 0px;
+  text-align: center; }
+
+.formTitle > img {
+  padding: 80px 10px 0px 10px;
+  margin: 0px; }
+
+#csvSection {
+  left: 50%;
+  top: 30%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #F25C55;
+  z-index: 1;
+  position: absolute;
+  background-color: rgba(255, 228, 196, 0.88);
+  padding: 30px;
+  width: 700px;
+  box-shadow: #c9a376 1px -1px 30px 9px;
+  text-align: center;
+  -webkit-box-shadow: #c9a376 1px -1px 30px 9px;
+  -moz-box-shadow: #c9a376 1px -1px 30px 9px; }
+  #csvSection .title {
+    font-size: 20px;
+    letter-spacing: 3px;
+    margin: 0px;
+    overflow: hidden;
+    text-align: center; }
+    #csvSection .title i {
+      font-size: 27px;
+      padding-right: 10px; }
+  #csvSection .closeModal {
+    position: absolute;
+    right: 30px;
+    top: 15px;
+    font-size: 22px;
+    margin: 0px; }
+
+#howToSection {
+  left: 15%;
+  top: 15%;
+  color: #F25C55;
+  z-index: 1;
+  position: absolute;
+  background-color: rgba(255, 228, 196, 0.88);
+  padding: 30px;
+  width: 70%;
+  height: 70%;
+  slise-shadow: #c9a376 1px -1px 30px 9px;
+  text-align: center;
+  -webkit-box-shadow: #c9a376 1px -1px 30px 9px;
+  -moz-box-shadow: #c9a376 1px -1px 30px 9px; }
+  #howToSection .title {
+    font-size: 50px;
+    letter-spacing: 3px;
+    margin: 0px;
+    overflow: hidden;
+    text-align: center; }
+    #howToSection .title i {
+      font-size: 80px;
+      padding-right: 10px; }
+  #howToSection .body {
+    float: left;
+    padding: 20px;
+    width: 240px; }
+    #howToSection .body .subTitle {
+      font-size: 20px; }
+    #howToSection .body i {
+      color: #F25C55; }
+  #howToSection .logo img {
+    margin: auto; }
+  #howToSection .closeModal {
+    position: absolute;
+    right: 30px;
+    top: 15px;
+    font-size: 22px;
+    margin: 0px; }
+  #howToSection .page2 {
+    margin-top: 70px; }
+    #howToSection .page2 > div {
+      margin: 50 auto 0;
+      display: inline-block;
+      color: #616161; }
+    #howToSection .page2 pre {
+      color: gray;
+      font-size: 14px;
+      text-align: left; }
+  #howToSection .page3 {
+    position: relative; }
+    #howToSection .page3 i {
+      font-size: 400px;
+      position: absolute;
+      left: 30%;
+      top: 37px;
+      color: rgba(230, 13, 13, 0.18); }
+    #howToSection .page3 div {
+      padding-top: 150px;
+      font-size: 20px; }
+
+.sashWrap {
+  position: absolute;
+  overflow: hidden;
+  top: 0px;
+  left: 0px;
+  width: 100px;
+  height: 80px; }
+
+.sash {
+  position: absolute;
+  z-index: 5;
+  top: 0px;
+  left: -15px;
+  width: 100px;
+  padding: 5px 10px 5px 5px;
+  letter-spacing: 2px;
+  background: #FF5E58;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.7);
+  transform: rotate(-30deg);
+  -webkit-transform: rotate(-30deg);
+  -moz-transform: rotate(-30deg); }
+
+.zeroHit {
+  margin: 100px;
+  color: #e56363;
+  font-size: 20px; }
