@@ -43,7 +43,7 @@ $(function() {
         var self = this;
         self.ajax(
           'GET',
-          'http://localhost:3000/cards.json',
+          '/cards.json',
           null,
           function(data) {
             self.tasks = data;
@@ -70,7 +70,7 @@ $(function() {
         self.tasks.$remove(self.tasks[-1]); // 新規タスクのtmpデータ削除
         self.ajax(
           'POST',
-          'http://localhost:3000/cards.json',
+          '/cards.json',
           params,
           function(data) {
             self.tasks.unshift(
@@ -106,7 +106,7 @@ $(function() {
         };
         self.ajax(
           'PUT',
-          'http://localhost:3000/cards/' + updateTask.id + '.json',
+          '/cards/' + updateTask.id + '.json',
           params,
           function(data) {
             self.closeDetail();
@@ -132,7 +132,7 @@ $(function() {
         self.tasks.$remove(task);
         self.ajax(
           'DELETE',
-          'http://localhost:3000/cards/' + id + '.json',
+          '/cards/' + id + '.json',
           null,
           function(data) {
             self.showToast('タスクを削除しました');
