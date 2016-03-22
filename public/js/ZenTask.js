@@ -40,8 +40,16 @@ $(function() {
     },
     methods: {
       initAnimation: function() {
-        this.animeShowSubTitle();
-//          .then(this.animeHideTitle);
+        this.animeShowSubTitle()
+          .then(this.animeShowCard);
+      },
+      animeShowCard: function() {
+        var $task = $('.task');
+        $.each('.task', function(index) {
+          $(this).delay(150).queue(function() {
+            $($task[index]).addClass('go');
+          });
+        });
       },
       hideInit: function() {
         $('.init').fadeOut('1500');
@@ -79,7 +87,7 @@ $(function() {
           );
         return d.promise();
       },
-      animeShowCard: function() {
+      animeShowCardxxx: function() {
         var speed = 800;
         $('.init').animate({opacity: 0.6}, speed);
         var d = new $.Deferred;
