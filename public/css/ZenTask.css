@@ -148,7 +148,8 @@ header {
     text-align: center;
     font-size: 25px; }
     .detail .contents .user input {
-      text-align: center; }
+      text-align: center;
+      width: 200px; }
 
 .detail .foot {
   text-align: center;
