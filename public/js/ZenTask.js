@@ -39,6 +39,85 @@ $(function() {
       self.setCardList();
     },
     methods: {
+      initAnimation: function() {
+        this.animeShowSubTitle();
+//          .then(this.animeHideTitle);
+      },
+      hideInit: function() {
+        $('.init').fadeOut('1500');
+      },
+      animeShowSubTitle: function() {
+        var d = new $.Deferred;
+        $(this).delay(500).queue(function() {
+          $('.subTitle')
+            .css({ display: 'block', opacity: 0, position: 'relative', top: '30px'})
+            .animate(
+              { opacity: 1, top: '0px'}
+              , 500
+              , 'easeOutCubic'
+            );
+          $('.title')
+            .css({ display: 'block', opacity: 0, position: 'relative', top: '30px;'})
+            .animate(
+              { opacity: 1, top: '0px'}
+              , 700
+              , 'easeOutCubic'
+              ,function() { d.resolve(); }
+            );
+        });
+        return d.promise();
+      },
+      animeShowTitle: function() {
+        var d = new $.Deferred;
+        $('.title')
+          .css({ display: 'block', opacity: 0, position: 'relative', top: '30px;'})
+          .animate(
+            { opacity: 1, top: '0px'}
+            , 700
+            , 'easeOutCubic'
+            ,function() { d.resolve(); }
+          );
+        return d.promise();
+      },
+      animeShowCard: function() {
+        var speed = 800;
+        $('.init').animate({opacity: 0.6}, speed);
+        var d = new $.Deferred;
+        $('.task')
+        .css({display: 'inline-block'})
+        .animate({opacity: 1}, speed, function() { d.resolve(); });
+        //ひとつずつ表示したいが・・・
+        // var $task = $('.task');
+        // $task.css({display: 'inline-block'});
+        // var j = 0;
+        // for(var i = 0; i < $task.length; i++) {
+        //   $($task[i]).delay(i * 100).queue(function() {
+        //     $($task[j])
+        //       .css({ opacity: 0, display: 'inline-block' })
+        //       .animate(
+        //         { opacity: 1 }
+        //         , 800
+        //         , 'linear'
+        //       );
+        //     j++;
+        //   });
+        // }
+        return d.promise();
+      },
+      animeHideTitle: function() {
+        var d = new $.Deferred;
+
+        $(this).delay(2000).queue(function() {
+          $('.init')
+            .animate(
+              { 'z-index': '1', opacity: 0 }
+              , 1000
+              , 'linear'
+              ,function() { d.resolve(); }
+            );
+        });
+        return d.promise();
+      },
       setCardList: function() {
         var self = this;
         self.ajax(
@@ -47,10 +126,8 @@ $(function() {
           null,
           function(data) {
             self.tasks = data;
-            $.each(self.tasks, function() {
-              this.color = self.getColor();
-            });
             self.setCardEvent();
+            self.initAnimation();
           },
           function(data) {
           },
@@ -183,8 +260,7 @@ $(function() {
           $.each($('.task'), function() {
             $('.body', this).css('background-color', self.getColor());
           });
-          $('.task:not(.go)').addClass('go'); //カード表示アニメーション発火
-        }, 700);
+        }, 100);
       },
     }
   });

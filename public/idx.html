@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <meta charset="UTF-8">
+	<title>Thank you Board</title>
 	<link rel='stylesheet' href='css/lib/normalize.css'>
 	<link rel='stylesheet' href='css/lib/semantic.min.css'>
 	<link rel='stylesheet' href='css/lib/animations.css'>
   <link rel="stylesheet" href="css/lib/font-awesome-4.5.0/css/font-awesome.min.css">
 	<link rel='stylesheet' href='css/ZenTask.css'>
 	<script src='js/lib/jquery-1.8.2.min.js'></script>
+	<script src='js/lib/jquery-easing.js'></script>
 	<script src='js/lib/vue.min.js'></script>
 	<script src='js/lib/vue-router.min.js'></script>
 	<script src='js/lib/css3-animate-it.js'></script>
@@ -14,24 +17,29 @@
 	<script type='text/javascript' src='js/KMJS.js'></script>
 	<script type='text/javascript' src='js/ZenTask.js'></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <meta charset="UTF-8">
 </head>
 <body id="app">
+	<section class="init" @click="hideInit()">
+		<div>
+	    <h2 class="subTitle" style="display:none;">アタリマエを言葉にしよう。</h2>
+	    <h1 class="title" style="display:none;"><i class="fa fa-map-o"></i> Thank you Board</h1>
+		</div>
+	</section>
   <header>
-    <h1>Zen Thanks</h1>
+		<h1><i class="fa fa-map-o"></i> Thank you Board</h1>
   </header>
 
   <main>
 
-		<section class="ctrlSection">
+		<section class="ctrlSection" style="">
 			<span class="addBtn" @click="showDetail(-1, true)"><i class="fa fa-plus-circle"></i></span>
 			<i style="display: none" class="fa fa-search"></i>
 			<input style="display:none" class="search" placeholder="カード検索" type="search" name="query" v-model="filterKey" @keyup="setCardEvent()">
 		</section>
 
 		<section class="taskSection">
-			<div class="row animatedParent animateOnce" data-sequence="60">
-			  <div v-for="task in tasks | filters filterKey" class="task animated flipInY" data-id="{{$index}}">
+			<div class="row animatedParent animateOnce" data-sequence="150">
+			  <div v-for="task in tasks | filters filterKey" class="task animated flipInX" data-id="{{$index}}" style="">
 			    <div class="header">
 						<p class="id">No.{{task.id}}</p>
 		      	<p class="deleteBtn" @click="deleteTask(task.id, task)"><i class="fa fa-times-circle"></i></p>
