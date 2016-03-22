@@ -44,12 +44,13 @@ $(function() {
           .then(this.animeShowCard);
       },
       animeShowCard: function() {
-        var $task = $('.task');
-        $.each('.task', function(index) {
-          $(this).delay(150).queue(function() {
-            $($task[index]).addClass('go');
-          });
-        });
+        $('.task')
+          .css({ opacity: 0 } )
+          .animate(
+            { opacity: 1}
+            , 1000
+            , 'easeOutCubic'
+          );
       },
       hideInit: function() {
         $('.init').fadeOut('1500');
@@ -171,7 +172,6 @@ $(function() {
               }
             );
             self.setCardEventNew();
-            $('main').removeClass('blur');
             $('.ui.basic.modal').modal('hide');
           },
           function(data) {
@@ -259,7 +259,7 @@ $(function() {
         var self = this;
         setTimeout(function(){
           $($('.task .body')[0]).css('background-color', self.getColor());
-          $('.task:not(.go)').addClass('go'); //カード表示アニメーション発火
+          $('.task:first-child').animate({ opacity: 1}, 300); //カード表示アニメーション発火
         }, 700);
       },
       setCardEvent() {

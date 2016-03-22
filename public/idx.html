@@ -38,8 +38,8 @@
 		</section>
 
 		<section class="taskSection">
-			<div class="row animatedParent animateOnce" data-sequence="150">
-			  <div v-for="task in tasks | filters filterKey" class="task animated flipInX" data-id="{{$index}}" style="">
+			<div class="row">
+			  <div v-for="task in tasks | filters filterKey" class="task">
 			    <div class="header">
 						<p class="id">No.{{task.id}}</p>
 		      	<p class="deleteBtn" @click="deleteTask(task.id, task)"><i class="fa fa-times-circle"></i></p>
