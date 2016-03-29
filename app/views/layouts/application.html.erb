@@ -2,21 +2,15 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
   <title>Thanks Board</title>
-	<link rel='stylesheet' href='css/lib/normalize.css'>
-	<link rel='stylesheet' href='css/lib/semantic.min.css'>
-	<link rel='stylesheet' href='css/lib/animations.css'>
+  <%= stylesheet_link_tag 'normalize.css' %>
   <link rel="stylesheet" href="css/lib/font-awesome-4.5.0/css/font-awesome.min.css">
-	<link rel='stylesheet' href='css/index.css'>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'jquery-1.8.2.min.js' %>
   <%= javascript_include_tag 'jquery-easing.js' %>
   <%= javascript_include_tag 'vue.min.js' %>
   <%= javascript_include_tag 'vue-router.min.js' %>
-  <%= javascript_include_tag 'css3-animate-it.js' %>
-  <%= javascript_include_tag 'semantic.js' %>
-	<script type='text/javascript' src='js/index.js'></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
