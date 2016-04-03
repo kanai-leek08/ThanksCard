@@ -3,23 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //semantin-ui style override
-.ui.modal {
+.detail.ui.modal {
   width: 650px;
 }
-.ui.basic.modal {
+.detail.ui.basic.modal {
   top: 45%;
   left: 55%;
   background-color: rgba(240, 240, 240, 0.8);
   padding: 30px;
   border-radius: 20px;
 }
-.dimmed.dimmable>.ui.visible.dimmer, .ui.active.dimmer {
-}
-
-.ui.dimmer {
-  background: rgba(228, 228, 228, 0.8);
-}
-
 
 header {
   text-align: center;
