@@ -27,7 +27,7 @@ module ThanksCard
     config.i18n.default_locale = :ja
 
 	#IPアクセス制限をaccess.ymlから読み込む
-	config.middleware.use "Rack::Access", YAML.load(open(Rails.root + "config/access.yml", &:read))[Rails.env]
+	#config.middleware.use "Rack::Access", YAML.load(open(Rails.root + "config/access.yml", &:read))[Rails.env]
 
   end
 end
