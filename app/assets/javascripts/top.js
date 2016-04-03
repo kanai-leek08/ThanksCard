@@ -244,7 +244,7 @@ $(function() {
       },
       showToast: function(msg) {
       },
-      ajax(method, url, params, cbSuccess, cbFailed, context) {
+      ajax: function(method, url, params, cbSuccess, cbFailed, context) {
         $.ajax({
           type: method,
           url: url,
@@ -262,7 +262,7 @@ $(function() {
           $('.task:first-child').animate({ opacity: 1}, 300); //カード表示アニメーション発火
         }, 700);
       },
-      setCardEvent() {
+      setCardEvent: function() {
         var self = this;
         setTimeout(function(){
           $.each($('.task'), function() {

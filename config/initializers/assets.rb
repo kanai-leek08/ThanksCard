@@ -10,11 +10,11 @@ Rails.application.config.assets.version = '1.0'
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
 Rails.application.config.assets.precompile += [
+    "normalize.css",
+    "semantic.min.css",
     "jquery-1.8.2.min.js",
     "jquery-easing.js",
     "semantic.min.js",
-    "semantic.min.css",
     "vue.min.js",
-    "vue-router.min.js",
-    "normalize.css",
+    "vue-router.min.js"
 ]
