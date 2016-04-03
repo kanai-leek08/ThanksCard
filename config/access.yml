@@ -1,0 +1,10 @@
+localnet: &localnet
+  /:
+    - 127.0.0.1
+development:
+  <<: *localnet
+test:
+  <<: *localnet
+production:
+  /:
+    - 127.0.0.1
