@@ -1,0 +1,31 @@
+// Place all the styles related to the ProductBacklogs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.section {
+  margin: 20px;
+}
+
+.strong {
+  line-height: 1.5em;
+  font-size: 16px;
+}
+.who {
+  color: orange;
+}
+.what {
+  color: #7CAE7C;
+}
+.why {
+  color: #8080F2;
+}
+.memo {
+  font-size: 12px;
+  color: gray;
+  margin-bottom: 10px;
+  p {
+    letter-spacing: 0.2em;
+    margin: 0px;
+  }
+}

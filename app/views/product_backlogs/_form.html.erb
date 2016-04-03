@@ -1,0 +1,51 @@
+<%= form_for(@product_backlog) do |f| %>
+  <% if @product_backlog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product_backlog.errors.count, "error") %> prohibited this product_backlog from being saved:</h2>
+
+      <ul>
+      <% @product_backlog.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label 'Story' %><br>
+    <%= f.text_field :story_who, :placeholder => 'who', :required => true %>として
+    <%= f.text_field :story_what, :placeholder => 'what', :required => true %>がしたい。なぜならば
+    <%= f.text_field :story_why, :placeholder => 'why', :required => true %>からだ。
+  </div>
+  <div class="field">
+    <%= f.label :create_user %><br>
+    <%= f.text_field :create_user %>
+  </div>
+
+  <% unless @product_backlog.new_record? %>
+    <div class="field" style="">
+      <%= f.label :priority %><br>
+      <%= f.number_field :priority %>
+    </div>
+    <div class="field" style="">
+    <%= f.label :assign %><br>
+    <%= f.text_field :assign %>
+    </div>
+    <div class="field" style="">
+      <%= f.label :done_date %><br>
+      <%= f.date_select :done_date %>
+    </div>
+    <div class="field" style="">
+      <%= f.label :done_user %><br>
+      <%= f.text_field :done_user %>
+    </div>
+    <div class="field" style="">
+      <%= f.label :acceptance_criteria %><br>
+      <%= f.text_area :acceptance_criteria %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
