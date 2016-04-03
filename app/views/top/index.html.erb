@@ -15,6 +15,9 @@
 			<span class="addBtn" @click="showDetail(-1, true)"><i class="fa fa-plus-circle"></i></span>
 			<i style="display: none" class="fa fa-search"></i>
 			<input style="display:none" class="search" placeholder="カード検索" type="search" name="query" v-model="filterKey" @keyup="setCardEvent()">
+			<div class="toProductBacklog">
+				<a class="ui inverted green button" href="/product_backlogs"><i class="fa fa-edit"></i>このアプリのアイデアを起票する</a>
+			</div>
 		</section>
 
 		<section class="taskSection">

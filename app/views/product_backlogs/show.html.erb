@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= @product_backlog.priority %>
+</p>
+
+<p>
+  <strong>Story who:</strong>
+  <%= @product_backlog.story_who %>
+</p>
+
+<p>
+  <strong>Story what:</strong>
+  <%= @product_backlog.story_what %>
+</p>
+
+<p>
+  <strong>Story why:</strong>
+  <%= @product_backlog.story_why %>
+</p>
+
+<p>
+  <strong>Create user:</strong>
+  <%= @product_backlog.create_user %>
+</p>
+
+<p>
+  <strong>Assign:</strong>
+  <%= @product_backlog.assign %>
+</p>
+
+<p>
+  <strong>Done date:</strong>
+  <%= @product_backlog.done_date %>
+</p>
+
+<p>
+  <strong>Done user:</strong>
+  <%= @product_backlog.done_user %>
+</p>
+
+<p>
+  <strong>Acceptance criteria:</strong>
+  <%= @product_backlog.acceptance_criteria %>
+</p>
+
+<%= link_to 'Edit', edit_product_backlog_path(@product_backlog) %> |
+<%= link_to 'Back', product_backlogs_path %>

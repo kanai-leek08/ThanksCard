@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :product_backlogs
   resources :cards
   root :to => 'top#index'
   # The priority is based upon order of creation: first created -> highest priority.
