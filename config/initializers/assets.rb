@@ -12,8 +12,10 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += [
     "normalize.css",
     "semantic.min.css",
+    "jquery-ui.min.css",
     "jquery-1.8.2.min.js",
     "jquery-easing.js",
+    "jquery-ui.js",
     "semantic.min.js",
     "vue.min.js",
     "vue-router.min.js"

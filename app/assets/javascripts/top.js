@@ -134,7 +134,15 @@ $(function() {
           '/cards.json',
           null,
           function(data) {
-            self.tasks = data;
+            var tasks = {};
+            $.each(data, function() {
+              tasks[this.created_at_f] = [];
+            });
+            $.each(data, function() {
+              tasks[this.created_at_f].push(this);
+            });
+            self.tasks = tasks;
+
             self.setCardEvent();
             self.initAnimation();
           },
@@ -167,7 +175,7 @@ $(function() {
                 'fromUser' : data.fromUser,
                 'toUser' : data.toUser,
                 'count' : data.count,
-                'created_at' : data.created_at,
+                'created_at_f' : data.created_at_f,
                 'color' : self.getColor()
               }
             );

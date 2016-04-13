@@ -18,6 +18,7 @@
   <tbody>
     <% @cards.each do |card| %>
       <tr>
+        <td><%= card.created_at_f %></td>
         <td><%= card.title %></td>
         <td><%= card.body %></td>
         <td><%= card.fromUser %></td>
