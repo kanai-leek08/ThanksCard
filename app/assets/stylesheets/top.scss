@@ -91,6 +91,14 @@ main {
 .tasks {
   margin: 15px;
 }
+.dayLine {
+  margin: 0px 0px 5px 9px;
+  padding-top: 22px;
+  font-size: 20px;
+  width: 90%;
+  color: darkgrey;
+  border-bottom: lightgray solid 2px;
+}
 
 .task {
   transition-property: all;

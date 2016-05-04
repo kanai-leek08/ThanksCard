@@ -6,6 +6,9 @@ class CardsController < ApplicationController
   # GET /cards.json
   def index
     @cards = Card.order("id DESC")
+    @cards.each_with_index do |card, i|
+      @cards[i].created_at_f = card.created_at.strftime('%Y/%m/%d').to_s
+    end
   end
 
   # GET /cards/1

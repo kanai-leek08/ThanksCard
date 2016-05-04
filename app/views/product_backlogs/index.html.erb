@@ -24,7 +24,7 @@
       </tr>
     </thead>
 
-    <tbody>
+    <tbody id="sortable">
       <% @product_backlogs.each do |product_backlog| %>
         <tr class="<% if product_backlog.priority == nil then %>negative<% end %>">
           <td><%= product_backlog.priority %></td>
@@ -46,3 +46,9 @@
     </tbody>
   </table>
 </section>
+
+<script>
+$(function() {
+  $('#sortable').sortable();
+});
+</script>
