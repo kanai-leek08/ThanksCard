@@ -13,6 +13,7 @@
     <thead>
       <tr>
         <th>Priority</th>
+        <th>Id</th>
         <th>Story</th>
         <th>Create user</th>
         <th>Create Date</th>
@@ -26,8 +27,9 @@
 
     <tbody id="sortable">
       <% @product_backlogs.each do |product_backlog| %>
-        <tr class="<% if product_backlog.priority == nil then %>negative<% end %>">
-          <td><%= product_backlog.priority %></td>
+        <tr data-id="<%= product_backlog.id %>">
+          <td class="info priority"></td>
+          <td><%= product_backlog.id %></td>
           <td><span class="strong who"><%= product_backlog.story_who %></span> として
               <br> <span class="strong what"><%= product_backlog.story_what %></span> がしたい。
               <br> なぜならば <span class="strong why"><%= product_backlog.story_why %> </span> からだ。
@@ -38,7 +40,7 @@
           <td><%= product_backlog.assign %></td>
           <td><%= product_backlog.done_date %></td>
           <td><%= product_backlog.done_user %></td>
-          <td><%= link_to 'Show', product_backlog %></td>
+          <% if false %><td><%= link_to 'Show', product_backlog %></td><% end %>
           <td><%= link_to 'Edit', edit_product_backlog_path(product_backlog) %></td>
           <td><%= link_to 'Destroy', product_backlog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
@@ -49,6 +51,42 @@
 
 <script>
 $(function() {
-  $('#sortable').sortable();
+
+  //優先順位を上から振り直す(DOM上)
+  var updateDispPriority = function(){
+    var updatedPriority = 1;
+    $.each($('.priority'), function() {
+      var priority = $(this).text();
+      $(this).text(updatedPriority++);
+    });
+  };
+
+  //優先順位を登録する
+  var updatePriority = function(){
+
+    //現状の順番のID配列を作成
+    var ids = [];
+    $.each($('tr:not(:first)'), function(){
+      ids.push($(this).attr('data-id'));
+    });
+
+    var cbSuccess = function(){};
+    var cbFailed = function(){ alert('error')};
+    $.ajax({
+      type: 'POST',
+      url: '/product_backlogs/updatePriority.json',
+      data: {'ids': ids},
+      context : null
+    }).done(cbSuccess).fail(cbFailed);
+  };
+
+  $('#sortable').sortable({
+    update: function() {
+      updateDispPriority();
+      updatePriority();
+    }
+  });
+
+  updateDispPriority();
 });
 </script>
