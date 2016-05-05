@@ -36,7 +36,7 @@
           </td>
           <td><%= product_backlog.create_user %></td>
           <td><%= product_backlog.created_at %></td>
-          <td><%= product_backlog.acceptance_criteria %></td>
+          <td><%= nl2br(product_backlog.acceptance_criteria) %></td>
           <td><%= product_backlog.assign %></td>
           <td><%= product_backlog.done_date %></td>
           <td><%= product_backlog.done_user %></td>
