@@ -8,6 +8,8 @@ class ProductBacklogsController < ApplicationController
     priorities = Priority.select(:priority_sort)
     # プロダクトバックログを優先順位で並べ替える
     @product_backlogs = priorities[0].priority_sort.split(",").collect {|id| @product_backlogs.detect {|x| x.id == id.to_i}}
+    # 存在しないPBLのIDは削除　
+    @product_backlogs.compact!
   end
 
   # GET /product_backlogs/1
