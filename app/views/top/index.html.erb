@@ -22,9 +22,7 @@
 
 		<section class="taskSection">
 			<div class="row">
-			  <div v-for="dayTasks in tasks | filters filterKey">
-					<p class="dayLine">{{$key}}</p>
-			  	<div v-for="task in dayTasks | filters filterKey" class="task">
+			  	<div v-for="task in tasks | filters filterKey" class="task">
 				    <div class="header">
 							<p class="id">No.{{task.id}}</p>
 			      	<p class="deleteBtn" @click="deleteTask(task.id, task)"><i class="fa fa-times-circle"></i></p>
@@ -41,7 +39,7 @@
 							<p class="count"><i class="fa fa-heart"></i>{{task.count}}</p>
 							<p class="insertDate">{{task.created_at_f}}</p>
 						</div>
-			    </div>
+					</div>
 			</div>
 		</section>
 
