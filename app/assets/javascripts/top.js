@@ -135,13 +135,7 @@ $(function() {
           null,
           function(data) {
             var tasks = {};
-            $.each(data, function() {
-              tasks[this.created_at_f] = [];
-            });
-            $.each(data, function() {
-              tasks[this.created_at_f].push(this);
-            });
-            self.tasks = tasks;
+            self.tasks = data;
 
             self.setCardEvent();
             self.initAnimation();
